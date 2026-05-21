@@ -1,0 +1,339 @@
+# Wrapper Class in Java
+
+# What is Wrapper Class?
+
+Wrapper classes in Java are used to convert primitive data types into objects.
+
+Java provides wrapper classes for all primitive data types.
+
+## Definition
+
+A wrapper class wraps (encloses) a primitive data type into an object.
+
+---
+
+# Why Wrapper Classes are Needed
+
+Wrapper classes are useful because:
+
+- Collections work only with objects
+- Required for synchronization
+- Helps in object conversion
+- Used in Java utilities and frameworks
+- Supports null values
+
+---
+
+# Primitive Data Types and Wrapper Classes
+
+| Primitive Type | Wrapper Class |
+|---|---|
+| byte | Byte |
+| short | Short |
+| int | Integer |
+| long | Long |
+| float | Float |
+| double | Double |
+| char | Character |
+| boolean | Boolean |
+
+---
+
+# Example of Wrapper Class
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        int num = 10;
+
+        Integer obj = Integer.valueOf(num);
+
+        System.out.println(obj);
+    }
+}
+```
+
+## Output
+
+```java
+10
+```
+
+---
+
+# Types of Conversion
+
+There are mainly two types of conversions:
+
+1. Autoboxing
+2. Unboxing
+
+---
+
+# 1. Autoboxing
+
+## Definition
+
+Automatic conversion of primitive type into wrapper object.
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        int a = 100;
+
+        Integer obj = a;
+
+        System.out.println(obj);
+    }
+}
+```
+
+## Output
+
+```java
+100
+```
+
+---
+
+# 2. Unboxing
+
+## Definition
+
+Automatic conversion of wrapper object into primitive type.
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        Integer obj = 200;
+
+        int num = obj;
+
+        System.out.println(num);
+    }
+}
+```
+
+## Output
+
+```java
+200
+```
+
+---
+
+# Important Methods in Wrapper Classes
+
+| Method | Purpose |
+|---|---|
+| `valueOf()` | Converts primitive/string into wrapper object |
+| `parseInt()` | Converts string into integer |
+| `parseDouble()` | Converts string into double |
+| `toString()` | Converts value into string |
+| `intValue()` | Converts object into int |
+| `doubleValue()` | Converts object into double |
+| `compareTo()` | Compares two wrapper objects |
+| `equals()` | Compares values |
+
+---
+
+# 1. valueOf() Method
+
+## Purpose
+
+Converts primitive value into wrapper object.
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        int num = 50;
+
+        Integer obj = Integer.valueOf(num);
+
+        System.out.println(obj);
+    }
+}
+```
+
+---
+
+# 2. parseInt() Method
+
+## Purpose
+
+Converts string into integer.
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        String s = "123";
+
+        int num = Integer.parseInt(s);
+
+        System.out.println(num + 10);
+    }
+}
+```
+
+## Output
+
+```java
+133
+```
+
+---
+
+# 3. toString() Method
+
+## Purpose
+
+Converts value into string.
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        Integer num = 100;
+
+        String s = num.toString();
+
+        System.out.println(s);
+    }
+}
+```
+
+---
+
+# 4. compareTo() Method
+
+## Purpose
+
+Compares two wrapper objects.
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+
+        Integer a = 10;
+        Integer b = 20;
+
+        System.out.println(a.compareTo(b));
+    }
+}
+```
+
+## Output
+
+```java
+-1
+```
+
+---
+
+# Wrapper Classes and Collections
+
+Collections in Java store only objects.
+
+## Example
+
+```java
+import java.util.ArrayList;
+
+class Demo {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        list.add(10);
+        list.add(20);
+
+        System.out.println(list);
+    }
+}
+```
+
+---
+
+---
+
+# Advantages of Wrapper Classes
+
+- Converts primitive into object
+- Needed for collections
+- Provides utility methods
+- Supports object-oriented programming
+- Useful in frameworks and APIs
+
+---
+
+# Disadvantages of Wrapper Classes
+
+- Uses more memory
+- Slightly slower than primitive types
+- Additional object creation overhead
+
+---
+
+# Real-Time Example
+
+## Banking Application
+
+In banking systems, account balances are often stored as objects because collections and databases work with objects.
+
+Example:
+
+```java
+Integer balance = 5000;
+```
+
+---
+
+# Important Interview Questions
+
+## What is wrapper class?
+
+A wrapper class converts primitive data type into object.
+
+## What is autoboxing?
+
+Automatic conversion of primitive into wrapper object.
+
+## What is unboxing?
+
+Automatic conversion of wrapper object into primitive.
+
+## Why are wrapper classes needed?
+
+Because collections and frameworks work only with objects.
+
+---
+
+# Conclusion
+
+Wrapper classes are very important in Java because they help convert primitive data types into objects. They are mainly used in:
+
+- Collections
+- Frameworks
+- APIs
+- Object-oriented programming
+- Data conversion
+
+Understanding wrapper classes is important for Java backend development and interviews.
+

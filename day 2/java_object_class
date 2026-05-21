@@ -1,0 +1,330 @@
+# Object Class in Java
+
+## What is Object Class?
+
+In Java, the `Object` class is the parent class of all classes.
+
+- It is present in the `java.lang` package.
+- Every Java class directly or indirectly inherits from the `Object` class.
+- Because of this, all Java classes can access the methods of the Object class.
+
+### Syntax
+
+```java
+public class Object
+```
+
+---
+
+# Why Object Class is Important
+
+The Object class provides common functionalities to all Java objects such as:
+
+- Comparing objects
+- Converting objects into strings
+- Cloning objects
+- Getting runtime class information
+- Thread communication
+
+---
+
+# Methods of Object Class and Their Purpose
+
+| Method | Purpose |
+|---|---|
+| `toString()` | Converts object data into string format |
+| `equals(Object obj)` | Compares two objects |
+| `hashCode()` | Returns hash value of object |
+| `getClass()` | Returns runtime class information |
+| `clone()` | Creates duplicate copy of object |
+| `finalize()` | Called before garbage collection |
+| `wait()` | Makes thread wait |
+| `wait(long time)` | Waits for specified time |
+| `wait(long time, int nanos)` | Waits with nanosecond precision |
+| `notify()` | Wakes one waiting thread |
+| `notifyAll()` | Wakes all waiting threads |
+
+---
+
+# 1. toString() Method
+
+## Purpose
+
+Used to return string representation of an object.
+
+## Syntax
+
+```java
+public String toString()
+```
+
+## Example
+
+```java
+class Student {
+    int id = 101;
+    String name = "Mukesh";
+
+    public String toString() {
+        return id + " " + name;
+    }
+
+    public static void main(String[] args) {
+        Student s = new Student();
+        System.out.println(s);
+    }
+}
+```
+
+## Output
+
+```java
+101 Mukesh
+```
+
+---
+
+# 2. equals() Method
+
+## Purpose
+
+Used to compare two objects.
+
+## Syntax
+
+```java
+public boolean equals(Object obj)
+```
+
+## Example
+
+```java
+class Test {
+    public static void main(String[] args) {
+        String s1 = "Java";
+        String s2 = "Java";
+
+        System.out.println(s1.equals(s2));
+    }
+}
+```
+
+## Output
+
+```java
+true
+```
+
+---
+
+# 3. hashCode() Method
+
+## Purpose
+
+Returns unique integer value for object.
+
+## Syntax
+
+```java
+public int hashCode()
+```
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+
+        System.out.println(d.hashCode());
+    }
+}
+```
+
+---
+
+# 4. getClass() Method
+
+## Purpose
+
+Returns runtime class information.
+
+## Syntax
+
+```java
+public final Class getClass()
+```
+
+## Example
+
+```java
+class Demo {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+
+        System.out.println(d.getClass());
+    }
+}
+```
+
+## Output
+
+```java
+class Demo
+```
+
+---
+
+# 5. clone() Method
+
+## Purpose
+
+Creates duplicate copy of object.
+
+## Syntax
+
+```java
+protected Object clone()
+```
+
+## Example
+
+```java
+class Student implements Cloneable {
+    int id = 101;
+
+    public static void main(String[] args) throws Exception {
+        Student s1 = new Student();
+        Student s2 = (Student)s1.clone();
+
+        System.out.println(s2.id);
+    }
+}
+```
+
+---
+
+# 6. finalize() Method
+
+## Purpose
+
+Called before object is destroyed by garbage collector.
+
+## Syntax
+
+```java
+protected void finalize()
+```
+
+## Example
+
+```java
+class Demo {
+    protected void finalize() {
+        System.out.println("Object Destroyed");
+    }
+
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d = null;
+
+        System.gc();
+    }
+}
+```
+
+---
+
+# 7. wait() Method
+
+## Purpose
+
+Pauses current thread execution.
+
+## Syntax
+
+```java
+public final void wait()
+```
+
+---
+
+# 8. notify() Method
+
+## Purpose
+
+Wakes one waiting thread.
+
+## Syntax
+
+```java
+public final void notify()
+```
+
+---
+
+# 9. notifyAll() Method
+
+## Purpose
+
+Wakes all waiting threads.
+
+## Syntax
+
+```java
+public final void notifyAll()
+```
+
+---
+
+# Important Interview Points
+
+## Key Points
+
+- Object class is superclass of all Java classes.
+- Every class automatically inherits Object class methods.
+- `toString()` and `equals()` are commonly overridden.
+- `hashCode()` is mainly used in collections.
+- `wait()`, `notify()`, and `notifyAll()` are used in multithreading.
+
+---
+
+# Difference Between == and equals()
+
+| == | equals() |
+|---|---|
+| Compares memory addresses | Compares content |
+| Operator | Method |
+| Used for reference comparison | Used for value comparison |
+
+## Example
+
+```java
+String s1 = new String("Java");
+String s2 = new String("Java");
+
+System.out.println(s1 == s2);
+System.out.println(s1.equals(s2));
+```
+
+## Output
+
+```java
+false
+true
+```
+
+---
+
+# Conclusion
+
+The Object class is the foundation of Java programming because every class inherits from it. Its methods are very important for:
+
+- Object comparison
+- String representation
+- Memory handling
+- Thread communication
+- Runtime information
+
+Understanding Object class methods is very important for Java interviews and backend development.
+
